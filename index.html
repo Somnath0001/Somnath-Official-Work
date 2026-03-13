@@ -9,7 +9,7 @@
         header { text-align: center; padding: 20px; background: #004a99; color: white; border-radius: 8px 8px 0 0; }
         .creator-section { display: flex; align-items: center; justify-content: center; background: #fff; padding: 15px; border-bottom: 2px solid #eee; }
         .creator-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 3px solid #004a99; }
-        .table-container { background: white; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow-x: auto; }
+        .table-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow-x: auto; border-top: 10px solid #d32f2f;}
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: #f8f9fa; color: #004a99; }
@@ -48,6 +48,9 @@
             text-transform: uppercase;
             font-size: 0.9em;
         }
+        html {
+          scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
@@ -65,11 +68,19 @@
             <p><strong>Last Updated:</strong> <span class="editable" contenteditable="true">11.03.2026</span></p>
         </div>
     </div>
+    <nav class="container">
+      <p style="text-align: center;">
+      <a href="#help">Help</a>&emsp;
+      <a href="#help-bengali">সাহায্য</a>&emsp;
+      <a href="#help-hindi">मदद</a>&emsp;
+      <a href="#ceir">CEIR</a>  
+      </p>
+    </nav>
 
     <div class="table-container">
+        <h2>Block SIM Cards</h2>
         <table>
         <thead>
-            <p>Block SIM Card</p>
             <tr>
                 <th>SL</th>
                 <th>SIM Company</th>
@@ -110,8 +121,8 @@
         </tbody>
     </table>
     <table>
+        <h2>Block Bank ATM Cards</h2>
     <thead>
-        <p>Block Bank ATM Cards</p>
         <tr>
             <th>Sl. No</th>
             <th>Bank Name</th>
@@ -211,7 +222,7 @@
     </div>
     
      <!-- English instruction-step -->
-    <div class="container">
+    <div id="help" class="container">
         <h2>Lost your Mobile Phone ?</h2>
         <p>Please follow the below guidelines.</p>
 
@@ -253,7 +264,7 @@
     </div>
 
     <!-- Bengali instruction-step -->
-    <div class="container bengali-text">
+    <div id="help-bengali" class="container bengali-text">
         <h2>আপনার মোবাইল ফোনটি হারিয়ে গেছে?</h2>
         <p>অনুগ্রহ করে নিচের নির্দেশিকাগুলো অনুসরণ করুন।</p>
 
@@ -295,7 +306,7 @@
     </div>
 
     <!-- Hindi instruction-step -->
-    <div class="container" lang="hi">
+    <div id="help-hindi" class="container" lang="hi">
         <h2>क्या आपका मोबाइल फोन खो गया है?</h2>
         <p>कृपया नीचे दिए गए दिशा-निर्देशों का पालन करें।</p>
 
@@ -335,7 +346,7 @@
             <p>Google Pay ब्लॉक करने के लिए डायल करें: 18004190157</p>
         </div>
     </div>
-    <div class="container">
+    <div id="ceir" class="container">
         <h2>Help for registering complaint in CEIR Portal for Mobile Lost</h2>
         <h2><a href="https://www.ceir.gov.in/Request/CeirUserBlockRequestDirect.jsp">Click this link to register complaint in CEIR Portal</a></h2>
         <div class="image-container">

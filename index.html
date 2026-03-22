@@ -14,8 +14,7 @@
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: #f8f9fa; color: #004a99; }
         tr:nth-child(even) { background-color: #fcfcfc; }
-        .editable { border: 1px dashed #ccc; padding: 2px 5px; transition: background 0.3s; }
-        .editable:hover { background: #fff8dc; cursor: pointer; }
+        .editable { border: 1px dashed #ccc; padding: 2px 5px; transition: background 0.3s; color: #15994e; font-weight: bold; }
         .footer { text-align: center; margin-top: 20px; font-size: 0.8em; color: #666; }
 
         .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 10px solid #d32f2f; }
@@ -122,6 +121,105 @@
             from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Seach bar syle */
+        body.searchbar-body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        background: #f9f9f9;
+        color: #333;
+        }
+        .searchbar-wrapper {
+        display: flex;
+        justify-content: center; /* horizontal centering */
+        padding: 5px 0;         /* spacing from top */
+        }
+
+        .searchbar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        width: fit-content;
+        }
+
+        #searchbar-input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+        width: 250px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        #searchbar-input:focus {
+        border-color: #0078d7;
+        box-shadow: 0 0 5px rgba(0,120,215,0.5);
+        }
+
+        .searchbar-btn {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background: #0078d7;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        }
+
+        .searchbar-btn:hover {
+        background: #005a9e;
+        transform: translateY(-2px);
+        }
+
+        .searchbar-highlight {
+        background-color: yellow;
+        border-radius: 3px;
+        padding: 2px;
+        }
+
+        .searchbar-active {
+        background-color: orange;
+        border-radius: 3px;
+        padding: 2px;
+        }
+
+        /* Nav Bar Style */
+        nav.nav-bar {
+            background: #0078d7; /* nice blue background */
+            padding: 12px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            border-radius: 10px;
+        }
+
+        nav.nav-bar p {
+            margin: 0;
+            text-align: center;
+        }
+
+        nav.nav-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav.nav-bar a:hover {
+            background: rgba(255,255,255,0.2);
+            color: #f0f0f0;
+        }
+        
     </style>
     
 </head>
@@ -129,32 +227,34 @@
 
     <header>
         <h1>Block SIM Cards & Bank ATM Cards</h1>
-        <p>Here is a guide to block your SIM cards by calling customer care numbers or through websites. <br>You can block your ATM cards by calling helpline numbers or send SMS from your registered mobile number or use Banking apps or websites.</p>
+        <p>Here is a guide to block your SIM cards by calling customer care numbers or through websites. You can block your ATM cards & UPI by calling helpline numbers or send SMS from your registered mobile number or use Banking apps or websites.</p>
     </header>
 
     <div class="creator-section">
         <!-- Placeholder Image: Replace 'src' with your photo URL <img src="https://via.placeholder.com" alt="Creator Photo" class="creator-img">-->
         <img src="somnath_image.jpeg" alt="Creator Photo" class="creator-img">
         <div>
-            <p><strong>Created By:</strong> <span class="editable" contenteditable="true">Somnath Maity</span></p>
-            <p><strong>Last Updated:</strong> <span class="editable" contenteditable="true">11.03.2026</span></p>
+            <p><strong>Created By:</strong> <span class="editable" contenteditable="False">Somnath Maity</span></p>
+            <p><strong>Last Updated:</strong> <span class="editable" contenteditable="False">23.03.2026</span></p>
         </div>
     </div>
-    <nav class="container">
+
+    <nav class="nav-bar">
         <p style="text-align: center;">
-        <a href="#block-upi">Block SIM</a>&emsp;
-        <a href="#block-atm">Block ATM</a>&emsp;
-        <a href="#help">Help</a>&emsp;
-        <a href="#help-bengali">সাহায্য</a>&emsp;
-        <a href="#help-hindi">मदद</a>&emsp;
-        <a href="#ceir">CEIR</a>&emsp;
-        <a href="#feedback">Feedback</a>
+            <a href="#block-sim">Block SIM</a>&emsp;
+            <a href="#block-atm">Block ATM & UPI</a>&emsp;
+            <a href="#help">Help</a>&emsp;
+            <a href="#help-bengali">সাহায্য</a>&emsp;
+            <a href="#help-hindi">मदद</a>&emsp;
+            <a href="#ceir">CEIR</a>&emsp;
+            <a href="#ncrp">NCRP</a>&emsp;
+            <a href="#feedback">Feedback</a>
         </p>
     </nav>
 
     <div class="table-container">
-        <h2 id="block-sim">Block SIM Cards</h2>
         <table>
+            <h2 id="block-sim">Block SIM Cards</h2>
         <thead>
             <tr>
                 <th>SL</th>
@@ -197,6 +297,12 @@
     </table>
     <table>
         <h2 id="block-atm">Block Bank ATM Cards & UPI</h2>
+        <div class="searchbar-wrapper">
+            <div class="searchbar-container">
+            <input type="text" id="searchbar-input" placeholder="🔍 Search for Bank Name...">
+            <button class="searchbar-btn" onclick="searchText()">Find</button>
+            </div>
+        </div>
     <thead>
         <tr>
             <th>Sl. No</th>
@@ -441,9 +547,10 @@
         <h2><a href="https://cybercrime.gov.in/Webform/Crime_AuthoLogin.aspx?rnt=5">Click this link to register complaint in NCRP Portal</a></h2>
         <h2>Dial 1930</h2>
     </div>
+    <script src="searchbar.js" defer></script>
 
     <div id="feedback" class="container" lang="hi">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRttp18Zf-GoOmgfe4KPmAiknJbomLsrpslZl6OI4rNuz-Hg/viewform?embedded=true" width="640" height="826" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRttp18Zf-GoOmgfe4KPmAiknJbomLsrpslZl6OI4rNuz-Hg/viewform?embedded=true" width="640" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
 
     <!-- Feedback Strip -->

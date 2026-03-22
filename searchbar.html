@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Horizontally Centered Search Bar</title>
+  <style>
+    body.searchbar-body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Keep the search bar horizontally centered at the top */
+    .searchbar-wrapper {
+      display: flex;
+      justify-content: center; /* horizontal centering */
+      padding: 30px 0;         /* spacing from top */
+    }
+
+    .searchbar-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    #searchbar-input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      width: 250px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    #searchbar-input:focus {
+      border-color: #0078d7;
+      box-shadow: 0 0 5px rgba(0,120,215,0.5);
+    }
+
+    .searchbar-btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #0078d7;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .searchbar-btn:hover {
+      background: #005a9e;
+      transform: translateY(-2px);
+    }
+
+    .searchbar-highlight {
+      background-color: yellow;
+      border-radius: 3px;
+      padding: 2px;
+    }
+
+    .searchbar-active {
+      background-color: orange;
+      border-radius: 3px;
+      padding: 2px;
+    }
+
+    .searchbar-content {
+      margin: 40px auto;
+      max-width: 600px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="searchbar-body">
+  <!-- Wrapper ensures horizontal centering -->
+  <div class="searchbar-wrapper">
+    <div class="searchbar-container">
+      <input type="text" id="searchbar-input" placeholder="🔍 Search in page...">
+      <button class="searchbar-btn" onclick="searchText()">Find</button>
+    </div>
+  </div>
+
+  <div class="searchbar-content">
+    <p>
+      This is a sample paragraph. You can type a word in the search bar above to highlight it in this text. 
+      Try searching for words like "sample" or "highlight".
+    </p>
+    <p>
+      Another paragraph with more text. Searching here will highlight matching words across the entire page.
+    </p>
+    <p>
+      Yet another paragraph to test scrolling. If you search for "scroll", the page will jump here.
+    </p>
+  </div>
+
+  <script>
+    function searchText() {
+      // Remove old highlights
+      let content = document.body.innerHTML.replace(/<span class="searchbar-highlight( searchbar-active)?">(.*?)<\/span>/g, "$2");
+
+      let searchValue = document.getElementById("searchbar-input").value;
+      if (searchValue) {
+        let regex = new RegExp(searchValue, "gi");
+        document.body.innerHTML = content.replace(regex, match => `<span class="searchbar-highlight">${match}</span>`);
+
+        let results = document.querySelectorAll(".searchbar-highlight");
+        if (results.length > 0) {
+          results[0].classList.add("searchbar-active");
+          results[0].scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      } else {
+        document.body.innerHTML = content; // reset if empty
+      }
+    }
+  </script>
+</body>
+</html>

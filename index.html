@@ -7,17 +7,17 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
         header { text-align: center; padding: 20px; background: #004a99; color: white; border-radius: 8px 8px 0 0; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 10px solid #d32f2f; }
         .creator-section { display: flex; align-items: center; justify-content: center; background: #fff; padding: 15px; border-bottom: 2px solid #eee; }
         .creator-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 3px solid #004a99; }
         .table-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow-x: auto; border-top: 10px solid #d32f2f;}
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        table { border-collapse: collapse; margin-top: 10px; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: #f8f9fa; color: #004a99; }
         tr:nth-child(even) { background-color: #fcfcfc; }
         .editable { border: 1px dashed #ccc; padding: 2px 5px; transition: background 0.3s; color: #15994e; font-weight: bold; }
         .footer { text-align: center; margin-top: 20px; font-size: 0.8em; color: #666; }
 
-        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 10px solid #d32f2f; }
         h2 { color: #d32f2f; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
         .title { font-weight: bold; font-size: 1.1em; color: #000; display: block; margin-bottom: 8px; }
         .consequence { color: #555; margin-left: 15px; }
@@ -61,7 +61,7 @@
             
             /* Fixed Dimensions */
             width: auto;
-            height: 50px; /* Locked height */
+            height: auto; 
             padding: 0 25px; /* Horizontal padding only */
             border-radius: 50px;
             
@@ -123,13 +123,7 @@
         }
 
         /* Seach bar syle */
-        body.searchbar-body {
-        font-family: "Segoe UI", Arial, sans-serif;
-        line-height: 1.6;
-        margin: 40px;
-        background: #f9f9f9;
-        color: #333;
-        }
+        
         .searchbar-wrapper {
         display: flex;
         justify-content: center; /* horizontal centering */
@@ -154,7 +148,7 @@
         border: 1px solid #ccc;
         border-radius: 6px;
         outline: none;
-        width: 250px;
+        width: auto;
         transition: border-color 0.3s, box-shadow 0.3s;
         }
 
@@ -299,7 +293,7 @@
         <h2 id="block-atm">Block Bank ATM Cards & UPI</h2>
         <div class="searchbar-wrapper">
             <div class="searchbar-container">
-            <input type="text" id="searchbar-input" placeholder="🔍 Search for Bank Name...">
+            <input type="text" id="searchbar-input" placeholder="🔍 Search Bank Name...">
             <button class="searchbar-btn" onclick="searchText()">Find</button>
             </div>
         </div>
